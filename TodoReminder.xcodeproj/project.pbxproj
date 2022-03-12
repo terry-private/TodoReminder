@@ -24,6 +24,7 @@
 		09C0D78527DCE63D00990047 /* TodoWidget.swift in Sources */ = {isa = PBXBuildFile; fileRef = 09C0D78427DCE63D00990047 /* TodoWidget.swift */; };
 		09C0D78727DCE64000990047 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 09C0D78627DCE64000990047 /* Assets.xcassets */; };
 		09C0D78B27DCE64000990047 /* TodoWidgetExtension.appex in Embed App Extensions */ = {isa = PBXBuildFile; fileRef = 09C0D77D27DCE63D00990047 /* TodoWidgetExtension.appex */; settings = {ATTRIBUTES = (RemoveHeadersOnCopy, ); }; };
+		09C0D79227DD157B00990047 /* Todo.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = 09C0D76327DC884700990047 /* Todo.xcdatamodeld */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -86,6 +87,8 @@
 		09C0D78427DCE63D00990047 /* TodoWidget.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TodoWidget.swift; sourceTree = "<group>"; };
 		09C0D78627DCE64000990047 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		09C0D78827DCE64000990047 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		09C0D79027DD0AD300990047 /* TodoReminder.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = TodoReminder.entitlements; sourceTree = "<group>"; };
+		09C0D79127DD0B4C00990047 /* TodoWidgetExtension.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = TodoWidgetExtension.entitlements; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -125,6 +128,7 @@
 		09C0D72427DC7BB800990047 = {
 			isa = PBXGroup;
 			children = (
+				09C0D79127DD0B4C00990047 /* TodoWidgetExtension.entitlements */,
 				09C0D72F27DC7BB800990047 /* TodoReminder */,
 				09C0D74527DC7BC100990047 /* TodoReminderTests */,
 				09C0D74F27DC7BC100990047 /* TodoReminderUITests */,
@@ -148,6 +152,7 @@
 		09C0D72F27DC7BB800990047 /* TodoReminder */ = {
 			isa = PBXGroup;
 			children = (
+				09C0D79027DD0AD300990047 /* TodoReminder.entitlements */,
 				09C0D76627DC8A2500990047 /* App */,
 				09C0D75F27DC850E00990047 /* Views */,
 				09C0D76727DC8A4B00990047 /* Model */,
@@ -446,6 +451,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				09C0D78527DCE63D00990047 /* TodoWidget.swift in Sources */,
+				09C0D79227DD157B00990047 /* Todo.xcdatamodeld in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -592,6 +598,7 @@
 				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
+				CODE_SIGN_ENTITLEMENTS = TodoReminder/TodoReminder.entitlements;
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
 				DEVELOPMENT_ASSET_PATHS = "\"TodoReminder/Preview Content\"";
@@ -622,6 +629,7 @@
 				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
+				CODE_SIGN_ENTITLEMENTS = TodoReminder/TodoReminder.entitlements;
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
 				DEVELOPMENT_ASSET_PATHS = "\"TodoReminder/Preview Content\"";
@@ -727,6 +735,7 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
 				ASSETCATALOG_COMPILER_WIDGET_BACKGROUND_COLOR_NAME = WidgetBackground;
+				CODE_SIGN_ENTITLEMENTS = TodoWidgetExtension.entitlements;
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
 				DEVELOPMENT_TEAM = 58F4SK879Y;
@@ -734,7 +743,7 @@
 				INFOPLIST_FILE = TodoWidget/Info.plist;
 				INFOPLIST_KEY_CFBundleDisplayName = TodoWidget;
 				INFOPLIST_KEY_NSHumanReadableCopyright = "";
-				IPHONEOS_DEPLOYMENT_TARGET = 15.2;
+				IPHONEOS_DEPLOYMENT_TARGET = 15.0;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
@@ -755,6 +764,7 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
 				ASSETCATALOG_COMPILER_WIDGET_BACKGROUND_COLOR_NAME = WidgetBackground;
+				CODE_SIGN_ENTITLEMENTS = TodoWidgetExtension.entitlements;
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
 				DEVELOPMENT_TEAM = 58F4SK879Y;
@@ -762,7 +772,7 @@
 				INFOPLIST_FILE = TodoWidget/Info.plist;
 				INFOPLIST_KEY_CFBundleDisplayName = TodoWidget;
 				INFOPLIST_KEY_NSHumanReadableCopyright = "";
-				IPHONEOS_DEPLOYMENT_TARGET = 15.2;
+				IPHONEOS_DEPLOYMENT_TARGET = 15.0;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
