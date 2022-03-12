@@ -8,6 +8,6 @@
         <attribute name="title" optional="YES" attributeType="String"/>
     </entity>
     <elements>
-        <element name="TodoList" positionX="-45" positionY="0" width="128" height="104"/>
+        <element name="TodoList" positionX="-1146.251708984375" positionY="-1523.0244140625" width="128" height="118"/>
     </elements>
 </model>

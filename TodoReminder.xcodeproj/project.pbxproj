@@ -14,6 +14,7 @@
 		09C0D75327DC7BC100990047 /* TodoReminderUITestsLaunchTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 09C0D75227DC7BC100990047 /* TodoReminderUITestsLaunchTests.swift */; };
 		09C0D76227DC854500990047 /* TodoListView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 09C0D76127DC854500990047 /* TodoListView.swift */; };
 		09C0D76527DC884700990047 /* Todo.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = 09C0D76327DC884700990047 /* Todo.xcdatamodeld */; };
+		09C0D76D27DC912D00990047 /* TodoListStore.swift in Sources */ = {isa = PBXBuildFile; fileRef = 09C0D76C27DC912D00990047 /* TodoListStore.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -44,6 +45,7 @@
 		09C0D75227DC7BC100990047 /* TodoReminderUITestsLaunchTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TodoReminderUITestsLaunchTests.swift; sourceTree = "<group>"; };
 		09C0D76127DC854500990047 /* TodoListView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TodoListView.swift; sourceTree = "<group>"; };
 		09C0D76427DC884700990047 /* Todo.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = Todo.xcdatamodel; sourceTree = "<group>"; };
+		09C0D76C27DC912D00990047 /* TodoListStore.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TodoListStore.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -147,6 +149,7 @@
 			isa = PBXGroup;
 			children = (
 				09C0D76327DC884700990047 /* Todo.xcdatamodeld */,
+				09C0D76C27DC912D00990047 /* TodoListStore.swift */,
 			);
 			path = Model;
 			sourceTree = "<group>";
@@ -281,6 +284,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				09C0D76527DC884700990047 /* Todo.xcdatamodeld in Sources */,
+				09C0D76D27DC912D00990047 /* TodoListStore.swift in Sources */,
 				09C0D76227DC854500990047 /* TodoListView.swift in Sources */,
 				09C0D73127DC7BB800990047 /* TodoReminderApp.swift in Sources */,
 			);
