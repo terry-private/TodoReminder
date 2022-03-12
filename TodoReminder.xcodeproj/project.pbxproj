@@ -18,6 +18,7 @@
 		09C0D76F27DC963900990047 /* TodoListViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 09C0D76E27DC963900990047 /* TodoListViewModel.swift */; };
 		09C0D77227DC96A200990047 /* TodoDetailView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 09C0D77127DC96A200990047 /* TodoDetailView.swift */; };
 		09C0D77527DC9BBA00990047 /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 09C0D77427DC9BBA00990047 /* Preview Assets.xcassets */; };
+		09C0D77827DCD22A00990047 /* AddTodoView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 09C0D77727DCD22A00990047 /* AddTodoView.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -52,6 +53,7 @@
 		09C0D76E27DC963900990047 /* TodoListViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TodoListViewModel.swift; sourceTree = "<group>"; };
 		09C0D77127DC96A200990047 /* TodoDetailView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TodoDetailView.swift; sourceTree = "<group>"; };
 		09C0D77427DC9BBA00990047 /* Preview Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = "Preview Assets.xcassets"; sourceTree = "<group>"; };
+		09C0D77727DCD22A00990047 /* AddTodoView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddTodoView.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -131,6 +133,7 @@
 		09C0D75F27DC850E00990047 /* Views */ = {
 			isa = PBXGroup;
 			children = (
+				09C0D77627DCD1FF00990047 /* AddTodo */,
 				09C0D77027DC968A00990047 /* TodoDetail */,
 				09C0D76027DC852D00990047 /* TodoList */,
 			);
@@ -177,6 +180,14 @@
 				09C0D77427DC9BBA00990047 /* Preview Assets.xcassets */,
 			);
 			path = "Preview Content";
+			sourceTree = "<group>";
+		};
+		09C0D77627DCD1FF00990047 /* AddTodo */ = {
+			isa = PBXGroup;
+			children = (
+				09C0D77727DCD22A00990047 /* AddTodoView.swift */,
+			);
+			path = AddTodo;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -311,6 +322,7 @@
 			files = (
 				09C0D76527DC884700990047 /* Todo.xcdatamodeld in Sources */,
 				09C0D77227DC96A200990047 /* TodoDetailView.swift in Sources */,
+				09C0D77827DCD22A00990047 /* AddTodoView.swift in Sources */,
 				09C0D76D27DC912D00990047 /* TodoListStore.swift in Sources */,
 				09C0D76227DC854500990047 /* TodoListView.swift in Sources */,
 				09C0D73127DC7BB800990047 /* TodoReminderApp.swift in Sources */,
