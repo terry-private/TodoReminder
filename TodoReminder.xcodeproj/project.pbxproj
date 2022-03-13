@@ -27,6 +27,10 @@
 		09C0D79227DD157B00990047 /* Todo.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = 09C0D76327DC884700990047 /* Todo.xcdatamodeld */; };
 		09C0D79327DD19FA00990047 /* TodoListStore.swift in Sources */ = {isa = PBXBuildFile; fileRef = 09C0D76C27DC912D00990047 /* TodoListStore.swift */; };
 		09C0D79627DD1AB000990047 /* TodoWidgetType.swift in Sources */ = {isa = PBXBuildFile; fileRef = 09C0D79427DD1A4C00990047 /* TodoWidgetType.swift */; };
+		09C0D79827DDCC0C00990047 /* PrioritySelection.intentdefinition in Sources */ = {isa = PBXBuildFile; fileRef = 09C0D79727DDCC0C00990047 /* PrioritySelection.intentdefinition */; };
+		09C0D79927DDCC2100990047 /* PrioritySelection.intentdefinition in Sources */ = {isa = PBXBuildFile; fileRef = 09C0D79727DDCC0C00990047 /* PrioritySelection.intentdefinition */; };
+		09C0D79C27DDD25C00990047 /* PriorityWidget.swift in Sources */ = {isa = PBXBuildFile; fileRef = 09C0D79B27DDD25C00990047 /* PriorityWidget.swift */; };
+		09C0D7C627DDD9D100990047 /* TodoWidgetBundle.swift in Sources */ = {isa = PBXBuildFile; fileRef = 09C0D7C527DDD9D100990047 /* TodoWidgetBundle.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -92,6 +96,10 @@
 		09C0D79027DD0AD300990047 /* TodoReminder.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = TodoReminder.entitlements; sourceTree = "<group>"; };
 		09C0D79127DD0B4C00990047 /* TodoWidgetExtension.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = TodoWidgetExtension.entitlements; sourceTree = "<group>"; };
 		09C0D79427DD1A4C00990047 /* TodoWidgetType.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TodoWidgetType.swift; sourceTree = "<group>"; };
+		09C0D79727DDCC0C00990047 /* PrioritySelection.intentdefinition */ = {isa = PBXFileReference; lastKnownFileType = file.intentdefinition; path = PrioritySelection.intentdefinition; sourceTree = "<group>"; };
+		09C0D79A27DDCFC600990047 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist; path = Info.plist; sourceTree = "<group>"; };
+		09C0D79B27DDD25C00990047 /* PriorityWidget.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PriorityWidget.swift; sourceTree = "<group>"; };
+		09C0D7C527DDD9D100990047 /* TodoWidgetBundle.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TodoWidgetBundle.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -155,6 +163,7 @@
 		09C0D72F27DC7BB800990047 /* TodoReminder */ = {
 			isa = PBXGroup;
 			children = (
+				09C0D79A27DDCFC600990047 /* Info.plist */,
 				09C0D79027DD0AD300990047 /* TodoReminder.entitlements */,
 				09C0D76627DC8A2500990047 /* App */,
 				09C0D75F27DC850E00990047 /* Views */,
@@ -255,6 +264,9 @@
 			isa = PBXGroup;
 			children = (
 				09C0D78427DCE63D00990047 /* TodoWidget.swift */,
+				09C0D79B27DDD25C00990047 /* PriorityWidget.swift */,
+				09C0D7C527DDD9D100990047 /* TodoWidgetBundle.swift */,
+				09C0D79727DDCC0C00990047 /* PrioritySelection.intentdefinition */,
 				09C0D79427DD1A4C00990047 /* TodoWidgetType.swift */,
 				09C0D78627DCE64000990047 /* Assets.xcassets */,
 				09C0D78827DCE64000990047 /* Info.plist */,
@@ -430,6 +442,7 @@
 				09C0D76227DC854500990047 /* TodoListView.swift in Sources */,
 				09C0D73127DC7BB800990047 /* TodoReminderApp.swift in Sources */,
 				09C0D76F27DC963900990047 /* TodoListViewModel.swift in Sources */,
+				09C0D79927DDCC2100990047 /* PrioritySelection.intentdefinition in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -454,8 +467,11 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				09C0D79827DDCC0C00990047 /* PrioritySelection.intentdefinition in Sources */,
 				09C0D79327DD19FA00990047 /* TodoListStore.swift in Sources */,
+				09C0D7C627DDD9D100990047 /* TodoWidgetBundle.swift in Sources */,
 				09C0D78527DCE63D00990047 /* TodoWidget.swift in Sources */,
+				09C0D79C27DDD25C00990047 /* PriorityWidget.swift in Sources */,
 				09C0D79227DD157B00990047 /* Todo.xcdatamodeld in Sources */,
 				09C0D79627DD1AB000990047 /* TodoWidgetType.swift in Sources */,
 			);
@@ -611,6 +627,7 @@
 				DEVELOPMENT_TEAM = 58F4SK879Y;
 				ENABLE_PREVIEWS = YES;
 				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_FILE = TodoReminder/Info.plist;
 				INFOPLIST_KEY_UIApplicationSceneManifest_Generation = YES;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchScreen_Generation = YES;
@@ -642,6 +659,7 @@
 				DEVELOPMENT_TEAM = 58F4SK879Y;
 				ENABLE_PREVIEWS = YES;
 				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_FILE = TodoReminder/Info.plist;
 				INFOPLIST_KEY_UIApplicationSceneManifest_Generation = YES;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchScreen_Generation = YES;
