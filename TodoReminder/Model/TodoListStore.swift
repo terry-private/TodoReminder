@@ -154,6 +154,7 @@ final class TodoListStore {
                 print("Unresolved error \(error), \(error.userInfo)")
             }
         })
+        print(container.persistentStoreDescriptions.first?.url ?? "nil.splite")
         return container
     }()
 

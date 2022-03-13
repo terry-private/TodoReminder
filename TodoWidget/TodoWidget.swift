@@ -9,28 +9,53 @@ import WidgetKit
 import SwiftUI
 
 struct Provider: TimelineProvider {
-    func placeholder(in context: Context) -> SimpleEntry {
-        SimpleEntry(date: Date())
+
+    func placeholder(in context: Context) -> RecentTodoEntry {
+        RecentTodoEntry(date: Date(), title: "Widget開発", priority: .high, id: UUID())
     }
 
-    func getSnapshot(in context: Context, completion: @escaping (SimpleEntry) -> ()) {
-        let entry = SimpleEntry(date: Date())
-        completion(entry)
+    func getSnapshot(in context: Context, completion: @escaping (RecentTodoEntry) -> ()) {
+        let dummyEntry = RecentTodoEntry(date: Date(), title: "Widget開発", priority: .high, id: UUID())
+        let emptyEntry = RecentTodoEntry(date: Date(), title: "Todoはありません", priority: .low, id: UUID())
+        if context.isPreview {
+            completion(dummyEntry)
+        } else {
+            do {
+                let store = TodoListStore()
+                let todoLists = try store.fetchTodayItems()
+                let entries = todoLists.map { (todoList) -> RecentTodoEntry in
+                    RecentTodoEntry(todoItem: todoList)
+                }
+                guard let first = entries.first else {
+                    completion(emptyEntry)
+                    return
+                }
+                completion(first)
+            } catch let error {
+                print(error.localizedDescription)
+                completion(emptyEntry)
+            }
+        }
     }
 
     func getTimeline(in context: Context, completion: @escaping (Timeline<Entry>) -> ()) {
-        var entries: [SimpleEntry] = []
-
-        // Generate a timeline consisting of five entries an hour apart, starting from the current date.
-        let currentDate = Date()
-        for hourOffset in 0 ..< 5 {
-            let entryDate = Calendar.current.date(byAdding: .hour, value: hourOffset, to: currentDate)!
-            let entry = SimpleEntry(date: entryDate)
-            entries.append(entry)
+        let emptyEntry = RecentTodoEntry(date: Date(), title: "Todoはありません", priority: .low, id: UUID())
+        do {
+            let store = TodoListStore()
+            let todoLists = try store.fetchTodayItems()
+            var entries = todoLists.map { (todoList) -> RecentTodoEntry in
+                RecentTodoEntry(todoItem: todoList)
+            }
+            if entries.isEmpty {
+                entries.append(emptyEntry)
+            }
+            let timeline = Timeline(entries: entries, policy: .atEnd)
+            completion(timeline)
+        } catch let error {
+            print(error.localizedDescription)
+            let timeline = Timeline(entries: [emptyEntry], policy: .atEnd)
+            completion(timeline)
         }
-
-        let timeline = Timeline(entries: entries, policy: .atEnd)
-        completion(timeline)
     }
 }
 
@@ -38,30 +63,76 @@ struct SimpleEntry: TimelineEntry {
     let date: Date
 }
 
-struct TodoWidgetEntryView : View {
+struct RecentTodoEntry: TimelineEntry {
+    let date: Date
+    let title: String
+    let priority: TodoPriority
+    let id: UUID
+
+    init(date: Date, title: String, priority: TodoPriority, id: UUID) {
+        self.date = date
+        self.title = title
+        self.priority = priority
+        self.id = id
+    }
+
+    init(todoItem: TodoListItem) {
+        self.date = todoItem.startDate
+        self.title = todoItem.title
+        self.priority = todoItem.priority
+        self.id = todoItem.id
+    }
+}
+
+// Widgetを表示するView
+struct TodoWidgetEntryView : View, TodoWidgetType {
     var entry: Provider.Entry
 
     var body: some View {
-        Text(entry.date, style: .time)
+        VStack {
+            Rectangle()
+                .foregroundColor(makePriorityColor(priority: entry.priority))
+                .clipShape(ContainerRelativeShape())
+                .overlay (
+                    Text(entry.title)
+                        .font(.title)
+                        .foregroundColor(.white)
+                )
+            VStack(alignment: .trailing) {
+                Text(entry.date, style: .date)
+                    .font(.caption)
+                Text(entry.date, style: .time)
+                    .font(.caption)
+            }
+        }
+        .padding(8)
+        .widgetURL(makeURLScheme(id: entry.id))
     }
 }
 
 @main
 struct TodoWidget: Widget {
+    // widgetの種類識別子
     let kind: String = "TodoWidget"
 
     var body: some WidgetConfiguration {
+        // 編集がないWidget
         StaticConfiguration(kind: kind, provider: Provider()) { entry in
             TodoWidgetEntryView(entry: entry)
+
         }
-        .configurationDisplayName("My Widget")
-        .description("This is an example widget.")
+        // Widget gallery のタイトル
+        .configurationDisplayName("Todo Reminder")
+        // Widget galleryの説明
+        .description("直近のTodoListをお知らせします")
+        .supportedFamilies([.systemSmall])
     }
 }
 
 struct TodoWidget_Previews: PreviewProvider {
     static var previews: some View {
-        TodoWidgetEntryView(entry: SimpleEntry(date: Date()))
+        TodoWidgetEntryView(entry: RecentTodoEntry(date: Date(), title: "Widget開発", priority: .high, id: UUID()))
+            // previewContextでwidgetの大きさをプレビューできる
             .previewContext(WidgetPreviewContext(family: .systemSmall))
     }
 }
